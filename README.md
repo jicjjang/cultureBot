@@ -1,2 +1,2 @@
 # extensions
-google extension collection
+google chrome extension collection
