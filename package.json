@@ -1,25 +1,25 @@
 {
-  "name": "extensions",
-  "version": "0.0.0",
-  "description": "google extension collection",
+  "name": "cultureBot",
+  "version": "0.0.1",
+  "description": "Notification about information to culture show in korea",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jicjjang/extensions.git"
+    "url": "git+https://github.com/jicjjang/cultureBot.git"
   },
   "keywords": [
-    "google",
-    "chrome",
-    "extensions",
-    "collection"
+    "Bot",
+    "dooray",
+    "nhnent",
+    "culture"
   ],
   "author": "jicjjang <jicjjang12@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jicjjang/extensions/issues"
+    "url": "https://github.com/jicjjang/cultureBot/issues"
   },
-  "homepage": "https://github.com/jicjjang/extensions#readme"
+  "homepage": "https://github.com/jicjjang/cultureBot#readme"
 }
