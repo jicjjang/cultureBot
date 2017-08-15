@@ -1,19 +1,18 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-const config = require('./config');
 
 module.exports = {
-  korean: function () {
-    return _common(1);
+  korean: function (url) {
+    return this._common(url, 1);
   },
   foreign: function () {
-    return _common(2);
+    return this._common(url, 2);
   },
   festival: function () {
-    return _common(3);
+    return this._common(url, 3);
   },
-  _common: function (count) {
-    return axios.get(config.split('[spot]').join(Number(count+1))).then(function (res) {
+  _common: function (url, count) {
+    return axios.get(url.split('[spot]').join(Number(count+1))).then(function (res) {
       const $ = cheerio.load(res.data);
       const datas = $('div.ilist tbody tr');
 
@@ -33,7 +32,6 @@ module.exports = {
         }
         showDatas.push(dataTemp);
       });
-      console.log(showDatas);
       return showDatas;
     }).catch(function (e) {
       console.error('error: ' + e);
