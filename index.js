@@ -5,10 +5,10 @@ module.exports = {
   korean: function (url) {
     return this._common(url, 1);
   },
-  foreign: function () {
+  foreign: function (url) {
     return this._common(url, 2);
   },
-  festival: function () {
+  festival: function (url) {
     return this._common(url, 3);
   },
   _common: function (url, count) {

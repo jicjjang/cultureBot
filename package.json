@@ -1,6 +1,6 @@
 {
   "name": "culturebot",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Notification about information to culture show in korea",
   "main": "index.js",
   "scripts": {
