@@ -2,17 +2,17 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 module.exports = {
-  korean: function (url) {
-    return this._common(url, 1);
+  korean: function (config) {
+    return this._common(config, 1);
   },
-  foreign: function (url) {
-    return this._common(url, 2);
+  foreign: function (config) {
+    return this._common(config, 2);
   },
-  festival: function (url) {
-    return this._common(url, 3);
+  festival: function (config) {
+    return this._common(config, 3);
   },
-  _common: function (url, count) {
-    return axios.get(url.split('[spot]').join(Number(count+1))).then(function (res) {
+  _common: function (config, count) {
+    return axios.get(config.url.split('[spot]').join(Number(count+1))).then(function (res) {
       const $ = cheerio.load(res.data);
       const datas = $('div.ilist tbody tr');
 
@@ -22,7 +22,7 @@ module.exports = {
         let dataTemp = {};
 
         const imageSrc = $(this).find('img').attr('src');
-        if (imageSrc.split('http://tkfile.yes24.com/upload2/PerfBlog').length > 1) {
+        if (imageSrc.split(config.image_src).length > 1) {
           const title = $(this).find('.lcont01 a');
           const etcs = $(this).find('td.tit');
           dataTemp['image'] = imageSrc;
